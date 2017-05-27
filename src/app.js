@@ -1,34 +1,38 @@
-var $ = require("jquery");
-
-var status;
-
-// Small helpers you might want to keep
-import './helpers/context_menu.js';
-import './helpers/external_links.js';
-
-// All stuff below is just to show you how it works. You can delete all of it.
-import { greet } from './hello_world/hello_world';
 import { remote } from 'electron';
-
-
 const app = remote.app;
 
+import { socket } from './socket/socket';
+var status;
+import { browsing } from './browsing/browsing';
 
-//const manifest = appDir.read('package.json', 'json');
+socket();
+browsing(app.getAppPath());
 
+var jsonfile = require('jsonfile')
+//
+var file = app.getAppPath()+ '/app/data/classes.json';
+console.log(file);
+// jsonfile.readFile(file, function(err, obj) {
+  // $("#content-receipt").html("<h1> Liste des classes</h1>");
+  // if(obj.counter==0){
+  //   $("#content-receipt").append("<div>Pas de classe pour l'instant</div>")
+  // }
+  // else {
+  //   for (var i = 1; i<= obj.counter; i++) {
+  //     var img = cwd().replace(/build/,'app/data/img/classes/'+obj[i.toString()].img);
+  //     $("#content-receipt").append('<a id="classe'+i+'" data-id="'+i+'" href="#"><img class="classe_img"  src="'+img+'"> <p> '+obj[i.toString()].name+'</p></a>');
+  //     var divId = "classe"+i;
+  //     document.getElementById(divId).addEventListener("click", function(){
+  //       ListeEleves(idUser,this.getAttribute('data-id'))
+  //     });
+  //
+  //   }
+  // }
 
-// document.querySelector('#greet').innerHTML = greet();
-
-// $(".classRollTarget").click(function() {
-//   alert(this.getAttribute('data-user-status'));
-//   status = this.getAttribute('data-user-status');
-// });
-
-$(document).on('click', 'button', function(e) {
-  if(this.getAttribute('data-target')){
-    $(".container").load(app.getAppPath()+"/app"+this.getAttribute('data-target'));
-  }
-  if(this.getAttribute('data-user-status')){
-    status = this.getAttribute('data-user-status');
-  }
-})
+  // if (idUser=="enseignant") {
+  //   $("#content-receipt").append('<div id="createClasse"><button type="button" class="btn btn-default" onClick: "return true"> Créer une classe </button></div>')
+  //   $("#createClasse").on("click", "button", function(){
+  //     createClasse();
+  //   });
+  // }
+//});

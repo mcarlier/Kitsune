@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Kitsune</title>
   <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,9 +12,15 @@
   <div class="container">
     <h1>HOME</h1>
     <button type="button" class="btn btn-primary" data-target="/html/classRoll.html" data-user-status="student">Espace élève</button></a>
-    <button type="button" class="btn btn-primary" data-target="/html/classRoll.html" data-user-status="teacher">Espace maitresse</button>
+    <button type="button" class="btn btn-primary" data-target="/html/classRoll.html" data-user-status="teacher">Espace enseignant</button>
   </div>
 
   <script src="app.js"></script>
+  <script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+  <!-- <script>
+  $(document).ready(function () {
+    $(".container").hide();
+});
+  </script> -->
 </body>
 </html>

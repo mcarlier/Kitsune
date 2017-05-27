@@ -2,4 +2,17 @@
 <p>
   liste des classes
 </p>
-<a href="app.html" onclick="return confirm('Etes vous sur? \n Tout avancement non sauvegardé sera perdu')"><button type="button" class="btn btn-primary">return</button></a>
+<div class = "teacherContent">Vous êtes dans la partie destinée à l'enseignant  </div>
+
+<a href="app.html" ><button type="button" class="btn btn-primary">return</button></a>
+<!-- onclick="return confirm('Etes vous sur? \n Tout avancement non sauvegardé sera perdu')" -->
+
+<script>
+  var socket = io.connect('http://localhost:8080');
+  socket.emit('getVariable', 'status');
+  socket.on('variable', function(message) {
+    if(message=="student"){
+      $('.teacherContent').hide();
+    }
+  })
+</script>
