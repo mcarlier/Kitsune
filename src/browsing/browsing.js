@@ -1,18 +1,41 @@
 var $ = require("jquery");
 
 var status = "";
+var classe = "";
+var student = "";
+
+
 export const browsing = (path) => {
-  console.log("path = ", path)
-  $(document).on('click', 'button', function(e) {
+  $(document).on('click', '.browsing', function(e) {
     if(this.getAttribute('data-target')){
-      console.log("path = ", path)
       $(".container").load(path+"/app"+this.getAttribute('data-target'));
     }
     if(this.getAttribute('data-user-status')){
       status = this.getAttribute('data-user-status');
     }
+    if(this.getAttribute('data-current-class')){
+      classe = this.getAttribute('data-current-class');
+    }
   })
 }
-export const getStatus = () => {
-  return status;
+export const get = (val) => {
+   switch(val) {
+    case 'status':
+      return status;
+    case 'classe':
+      return classe;
+    case 'student':
+      return student;
+  }
 };
+
+// export const set = (val) => {
+//    switch(val) {
+//     case 'status':
+//        status = val;
+//     case 'classe':
+//        classe = val;
+//     case 'student':
+//        student = val;
+//   }
+// };

@@ -1,16 +1,19 @@
 <h1>Création d'une nouvelle classe</h1>
 
-<form action="createClass" method="get">
-  <div class="form-group">
-    <label for="formGroupExampleInput">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-  </div>
-</form>
-<button type="button" onclick="myFunction()" class="btn btn-primary">Soumettre</button>
+  <form action="" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" />
+        <br />
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Enter a short description about yourself"></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+      </fieldset>
+  </form>
 
  <script>
  function myFunction() {
@@ -18,6 +21,6 @@
  }
  </script>
 
-<!--
-<button type="button" class="btn btn-primary" data-target="/html/classRoll.html" data-user-status="teacher">Espace enseignant</button>
-<a href="app.html" ><button type="button" class="btn btn-primary">Home</button></a> -->
+
+<button type="button" class="browsing btn btn-primary" data-target="/html/classRoll.html" data-user-status="teacher">Retour</button>
+<a href="app.html" ><button type="button" class="browsing btn btn-primary">Home</button></a>
