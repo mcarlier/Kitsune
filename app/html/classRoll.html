@@ -3,14 +3,17 @@
   liste des classes
 </p>
 <div class = "teacherContent">Vous êtes dans la partie destinée à l'enseignant  </div>
+<div id="content-receipt"> </div>
 
 <a href="app.html" ><button type="button" class="btn btn-primary">return</button></a>
 <!-- onclick="return confirm('Etes vous sur? \n Tout avancement non sauvegardé sera perdu')" -->
 
 <script>
   var socket = io.connect('http://localhost:8080');
-  socket.emit('getVariable', 'status');
-  socket.on('variable', function(message) {
+  socket.emit('displayClasses','');
+  socket.emit('getStatus', '');
+  socket.on('status', function(message) {
+    console.log(message);
     if(message=="student"){
       $('.teacherContent').hide();
     }

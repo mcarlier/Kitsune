@@ -1,0 +1,23 @@
+<h1>Création d'une nouvelle classe</h1>
+
+<form action="createClass" method="get">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+</form>
+<button type="button" onclick="myFunction()" class="btn btn-primary">Soumettre</button>
+
+ <script>
+ function myFunction() {
+   socket.emit('saveClasse','');
+ }
+ </script>
+
+<!--
+<button type="button" class="btn btn-primary" data-target="/html/classRoll.html" data-user-status="teacher">Espace enseignant</button>
+<a href="app.html" ><button type="button" class="btn btn-primary">Home</button></a> -->
